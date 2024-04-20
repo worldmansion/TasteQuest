@@ -1,12 +1,8 @@
-const { User } = require("../components/user/user.model")
+const ObservableDatabase = require("./ObservableDatabase");
+const saveToFile = require("./saveDbToFile");
+
+const database = new ObservableDatabase()
+database.subscribe(saveToFile);
 
 
-const michal = new User(1, "Michal", "traktor@gmail.com");
-const julia = new User (2, "Julia", "nova@gmail.com")
-
-const database = {
-    users: [michal, julia]
-}
-
-
-module.exports = database
+module.exports = database;

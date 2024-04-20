@@ -1,0 +1,25 @@
+{
+  "lastUserId": 2,
+  "users": [
+    {
+      "id": 1,
+      "name": "Klara",
+      "email": "mala@gmail.com",
+      "bookmarkList": []
+    },
+    {
+      "id": 2,
+      "name": "Klara",
+      "email": "ijahs@extrem.cz",
+      "bookmarkList": []
+    },
+    {
+      "id": 2,
+      "name": "Jakub",
+      "email": "jakubnovotny@seznam.cz",
+      "bookmarkList": []
+    }
+  ],
+  "lastRecipeId": 0,
+  "recipes": []
+}
