@@ -13,15 +13,15 @@
       "id": "9e0f5bb9-21c4-4dcc-8c54-e672177c42f0",
       "name": "Hanka",
       "email": "nova@gmai.com",
-      "bookmarkList": [
-        "c1a8b1dc-d966-44ce-b9f1-11ed5b9bc93b"
-      ]
+      "bookmarkList": []
     },
     {
       "id": "5ac19819-7b01-4eaf-b859-a49e7df7829b",
       "name": "Iveta",
       "email": "kluknavska@alias.com",
-      "bookmarkList": []
+      "bookmarkList": [
+        "c1a8b1dc-d966-44ce-b9f1-11ed5b9bc93b"
+      ]
     }
   ],
   "recipes": [
@@ -155,6 +155,23 @@
       "cookingTime": 50,
       "imageURL": "https://edamam-product-images.s3.amazonaws.com/web-img/b0d/b0de58e1f1efebb51e608bfd83699c8b.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIDjrIAxypcyW%2FutAuBegK4EwJBGrV10L1cuqlBT5MagtAiBo9TZpWZGkyQ2MYS9pjm3sIMNkPLEdleNt7I70JbTl5Cq5BQhAEAAaDDE4NzAxNzE1MDk4NiIMIJyqAPWpWWgtrdhaKpYFJn4CGR2fqFLVxhjH%2FtjXOKgUeQqNYPQooQRAEhVYRHciy30DSdepo1LxHV3cHvaGtwAAh6ipx4CDVOgX%2FINCbK2gk8l7pC6XxdjzhyueSJz5LcIfvRt1a7zsyQiBjTdY2EWVvhoKqlW1q2VWo3ldkGPnQaNwajq9RFunEWj8d3WiMR2aNaoWKMybCrjRLx9bY8gEA6Pl85BBifoBa9hpGlJ%2BYCv5dh7MymrsecliATb8dEjTSqtqNl12QywgPCIJdoxMiBSnpc6%2BIHsIlyIPtBPXX11INAkM0ksNnCkghgNI%2B8h3%2BtNvrZUz9%2B1ZE%2BIdKLbEjw7YTxr9UYahI%2BPOjAPWcl9KzRR5r32o7gx4ZUpZWMGr2k%2BcjJ9KpclSd426JzR2aASrgZOak7lNNuW2ERg1rrvPH7Auuy%2BcbioGkJ1TgoG7p%2B%2FdDoWrGN2%2BPs8HRwSZ2zr3Kk3Zfnb%2FmhuArXzRAvIOAIOFnMDnQx%2F%2BMlTb4my6W13MbT6lHp071OVz0CY%2FT72%2BQjc74zCIuFaNLhrWueBCAWdNm9nbJj3VxyHDpiiZmNMoDMIGsFT%2FWIeDKLTiVpT7gmDofc6WOwfUKYBUfQ8lHoSpD3BqQmnQg52pEV4hmrR6tVHhNeQsHDF2XTeQTVzPInF7Q3PB3vZsDSToPOZLqz%2FaYkEf5zfn2uczL8Ks4lhlKidCBXytHXMM3y8SEZLKnI429s1yOU8pdm9f8bfZgVt460PJhkxg95auy%2FB3ndtpXl16ht6Idqaw%2Boe9liXqJpe9n4uKpgFywHif%2FYmRDAWrdUOlRt6TDDrf1Er6J7HrUgz7kWdY5V4w6J4a5X8y2lB5R%2B5QYWnS3jDvGW%2FSqIY6guvMWhdvcLxbuISU6v8w8PeSsQY6sgFOTvdyDzpqf%2BtqmTkAQupbK2wNaTa2lDTzEMyZx4q1c7rJJ%2Ba5g7Pp%2BSVJu6boSRo0cfYjR9L4HYfDY5%2F1mCK%2ForJqUOFo7EAI9ud0RE5Elq0gdvoGk1%2BP6ARtiGzUhCNUs3Zx2g%2BNfz7xNqfXWCl8AHnUyHzWOt%2BVRFJReaXuD0r02ewMxkdIVCMhb%2BqOxGQKr%2BFtNkMUVeL0QNpGKj3ZK%2Bka0IVk9FSGQO2Iel5FAmKj&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240421T084511Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFEHTNMVFW%2F20240421%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=d24396dfa62270a2ddedd724f2fb8dfa82ee7f3cbfbb457f5644845f530d3d45",
       "url": "https://food52.com/recipes/12397-chicken-tikka-fajita-shawarma"
+    },
+    {
+      "id": "cf04788e-75f0-48ff-abeb-21c757244789",
+      "title": "Dill Dip",
+      "ingredient": [
+        "8 ounces sour cream",
+        "1 tablespoon mayonnaise",
+        "plus an additional tablespoon if needed to taste",
+        "1 tablespoon seasoned salt",
+        "1 tablespoon dried dill",
+        "1 teaspoon garlic salt",
+        "1 tablespoon dried onion flakes or onion powder"
+      ],
+      "calories": 690.5044462966217,
+      "cookingTime": 70,
+      "imageURL": "https://edamam-product-images.s3.amazonaws.com/web-img/02a/02abc533c724037ffc0070e3799cb66a.jpeg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAEaCXVzLWVhc3QtMSJGMEQCIB4z1RwmNfuetzd4xgP7qcrKKbdWnsnyGblfy2OfyPtKAiAyN8qGOdvoEZszz4aov7dhyrASnU5%2FvYTG1%2FdAuVYxrCq4BQhJEAAaDDE4NzAxNzE1MDk4NiIMyEUCYiJ5E3UG%2F3UKKpUFEPcE90O43Xl0VqZ8yJBJFE6slibgcyYtY6I49KsyXz9hYieiCwuIv%2BJ2dN%2BSmeay6Vo8wMn10xE8g9tGkTj%2FJvct4hPoXMPencEvH9CPiL8jp%2Bqb0ce5LMcm6vhtXlcrjbczY3CqKCMz23DAiZfedP47bYpf3Q%2FrFcJUDRcc%2B4Q9e9Z3a%2Bxqwi6o5ylQrMpxNG1O6cTNYVuMUi5Nnd2StXFBt6WGiRe3FKXbf%2FQGFA1XPlAkLeVXMdDGrzXZKsA8DBNl8klfWXcT3aMOCy8pQG2DgkAlIwsiygxjxMQBrsHeUOfzbJqtjCfjtFlD4ddAvAg3%2Fi4ThVC4yDJL3wDYjHkJbSkKOH6mhn5%2B2G3pVXUOJQQKmuKa6iiDD42rZOAITxYBA3spBRVzxjx0XAEu8WB%2BWsEAOOAq9G3jHYmBNjH%2FzKzFuu5FNCplj%2FW7Sne6FpBwjtp%2Bp17t%2BaNUlzazWLkfYFZSUk%2Bc7DzvP%2B3repGmjcSwk%2BdglcEYYrpdnx8Q312yOPBFUwPo8lvioanvuJrYxqRaIhZZCemy%2BJXGa2xTe94G%2FFQkFvzNRd5HDKZXNePXWBfJdjnPE0FIyHjPzQbVt2tz6KwGGcuH%2BomaUgFDZeDKKeiJ90rrL8mUQspxKTvIpYAEOnhTCf4LqUDiM7%2FDrcHp4I8obxtRuwyvhCumBzgycidSelxA4QQ8TATvbR2vdCJkFUw2Kjp%2FmjDx52QX66LNwDQ6zmimwh%2FD%2BwY%2FsDKY2AZkpvBX%2BwZnnhmneDU4fhByx4Lwai64Kh7yQ92qBIZULRVVBd%2F%2F2q0ZzQTHtJCHROGWM%2BgBdXUjFzT%2BQvNob9LSr22WSpmyZjLQVor1C3NosweRI4m5gHcWS3niu1ZPzjDn9pSxBjqyAfcOZWCZme4EWn%2B%2BJBJjZZIUeZRjonygsFoyNB0JxoD9qDxDVZQLa%2BoU86avlAXo0GaaTZbZ2BU70l4FAShOfBW0%2BWxbCk0KCK75ic13JfGYrkA0i9KzAtMz6JNEj2qbAEFJqKTsQ8OVQP79ZbO7TdYzinhsQzwkniiKvlkFkuqCc0rI2mYriFNSfLr2JZdHR8544Fqk6lzBYag8RwoAZeoRksKZ0nyWib2kh1R0A1UseG0%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240421T173109Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Credential=ASIASXCYXIIFNMA7U2GO%2F20240421%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=b5e414a50fad776c6696ae8995a125e37933a734a823d029ebfef4ac0768b8d7",
+      "url": "https://food52.com/recipes/78245-dill-dip"
     }
   ]
 }

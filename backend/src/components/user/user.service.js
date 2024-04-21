@@ -86,23 +86,6 @@ const UserService = {
         return res.status(201).send(newUser)
     },
 
-    deleteUser: (req, res) => {
-        try {
-            const userId = req.params.id;
-
-            if (typeof(userId) !== 'string') {
-                return res.status(400).send({ message: "Invalid ID!!" })
-            }
-
-            const userDao = new UserDAO(database);
-
-            userDao.deleteUser(userId)
-    
-            return res.status(200).send({message: "User deleted"})
-        } catch(error) {
-            return res.status(400).send({message: "Invalid ID!!"})
-        }
-    },
 
     getAllBookmarkedRecipes: (req, res) => {
         const userId = req.params.id;

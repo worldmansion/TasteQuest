@@ -49,12 +49,6 @@ class RecipeDAO {
     }
     
     
-    deleteRecipe(recipeId) {
-            const newRecipes = this.database.data.recipes.filter((recipes) => recipes.id !== recipesId)
-    
-            this.database.updateData({ recipes: newRecipes })
-    }
-    
     notifySubscribers() {
         this.database.notify();
     }

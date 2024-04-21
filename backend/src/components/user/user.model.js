@@ -59,20 +59,20 @@ class UserDAO {
     removeBookmark(userId, recipeId) {
         const user = this.getUser(userId);
         if (user) {
-            user.bookmarkList.filter(iteratedRecipeId => iteratedRecipeId !== recipeId);
+            user.bookmarkList = user.bookmarkList.filter(iteratedRecipeId => iteratedRecipeId !== recipeId);
             this.notifySubscribers();
+            return true;
         }
+        return false;
     }
-
+    
     getBookmarkedRecipes(userId) {
         const user = this.getUser(userId);
         const recipeDao = new RecipeDAO(this.database);
-
         const recipes = user.bookmarkList.map(recipeId => recipeDao.getRecipe(recipeId));
-
-        return recipes
+        return recipes;
     }
-
+    
     notifySubscribers() {
         this.database.notify();
     }
