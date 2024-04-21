@@ -2,7 +2,7 @@ const database = require("../../database/database");
 const fetchData = require("../../utils/fetchData");
 const fetchRecipes = require("./recipe.edamam.query");
 
-const { Recipe, RecipeDAO } = require("./recipe.model"); // Make sure to export Recipe class too
+const { Recipe, RecipeDAO } = require("./recipe.model"); 
 const ACCESS_POINT = "https://api.edamam.com/api/recipes/v2";
 const APP_ID = "55480d47";
 const API_KEY = "ec08cfc8cccee574ad4e25218cc677cf";
@@ -19,8 +19,9 @@ const RecipeService = {
         });
     },
 
+
     createRecipe: (req, res) => { 
-        const { 
+         const { 
             title, 
             ingredient, 
             calories, 
@@ -29,12 +30,12 @@ const RecipeService = {
             url 
         } = req.body;
 
+        
         if (!title || !ingredient || !calories || !cookingTime || !imageURL || !url) {
             return res.status(400).send({ message: "All fields must be filled" });
         }
 
         if (typeof(title) !== 'string' ||
-            !Array.isArray(ingredient) || // keď zadavam array ingrediencii do postmana, hodi mi error undefined
             typeof(calories) !== 'number' ||
             typeof(cookingTime) !== 'number' ||
             typeof(imageURL) !== 'string' ||
@@ -62,13 +63,13 @@ const RecipeService = {
 
     getRecipeFromEdamam: async (req, res) => {
         try {
-            const query = req.query.q; // Added a semicolon here for consistency
+            const query = req.query.q; 
             const edamamResponse = await fetchRecipes(query);
 
             const recipes = edamamResponse.hits.map(({ recipe }) => {
                 return new Recipe({
-                    calories: recipe.calories,
-                    cookingTime: recipe.totalTime, // TODO: totalTime might not be okay
+                    calories: recipe.calories, // zaokruhlovanie v FE
+                    cookingTime: recipe.totalTime,
                     url: recipe.url,
                     ingredient: recipe.ingredientLines?.join(', '),
                     imageURL: recipe.image,

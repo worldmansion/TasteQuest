@@ -8,16 +8,6 @@ class User {
         this.bookmarkList = bookmarkList || [];
     
     }
-
-    bookmarkRecipe(recipeId) {
-        if (!this.bookmarkList.includes(recipeId)) {
-            this.bookmarkList.push(recipeId);
-        }
-    }
-
-    removeBookmark(recipeId) {
-        this.bookmarkList = this.bookmarkList.filter(id => id !== recipeId);
-    }
 }
 
 class UserDAO {
@@ -35,11 +25,11 @@ class UserDAO {
     }
 
     createUser({ name, email }) {
-        const newUser = new User(this.database.data.lastUserId + 1, name, email, [] );
-        // check if email already exists .find(user . email == email)
+        const newUser = new User(this.database.newId(), name, email, [] );
+        
         const newUsers = [...this.database.data.users, newUser]
 
-        this.database.updateData({ users: newUsers, lastUserId: newUser.id   })
+        this.database.updateData({ users: newUsers   })
 
         return newUser
     }
@@ -57,14 +47,20 @@ class UserDAO {
     addBookmark(userId, recipeId) {
         const user = this.getUser(userId);
         if (user) {
-            user.bookmarkRecipe(recipeId);
+            if (!user.bookmarkList.includes(recipeId)) {
+                user.bookmarkList.push(recipeId);
+            }
+            this.notifySubscribers();
+            return true
         }
+        return false
     }
 
     removeBookmark(userId, recipeId) {
         const user = this.getUser(userId);
         if (user) {
-            user.removeBookmark(recipeId);
+            user.bookmarkList.filter(iteratedRecipeId => iteratedRecipeId !== recipeId);
+            this.notifySubscribers();
         }
     }
 
@@ -75,6 +71,10 @@ class UserDAO {
         const recipes = user.bookmarkList.map(recipeId => recipeDao.getRecipe(recipeId));
 
         return recipes
+    }
+
+    notifySubscribers() {
+        this.database.notify();
     }
 }
 

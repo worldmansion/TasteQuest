@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
+
 
 function loadJSONFile(filePath) {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -13,11 +15,10 @@ class ObservableDatabase {
             this.data = loadJSONFile(filePath)
         } catch (error) {
             this.data = {
-                lastUserId: 0,
-                lastRecipeId: 0,
                 users: [],
                 recipes: []
             }
+
         }
 
         this.subscribers = [];
@@ -25,6 +26,10 @@ class ObservableDatabase {
 
     subscribe(callback) {
         this.subscribers.push(callback);
+    }
+
+    newId() {
+        return uuidv4();
     }
 
     notify() {

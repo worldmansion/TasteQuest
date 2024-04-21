@@ -6,9 +6,18 @@ const { UserDAO } = require("./user.model");
 const UserService = {
     getUser: (req, res) => {
         const userId = req.params.id;
+
+        if (typeof(userId) !== 'string') {
+            return res.status(400).send({ message: "Invalid ID!!" })
+        }
+
         const userDao = new UserDAO(database);
 
         const foundUser = userDao.getUser(userId);
+
+        if (!foundUser) {
+            return res.status(404).send({ message: "User not found." })
+        }
 
         res.send({ user: foundUser });
     },
@@ -16,28 +25,45 @@ const UserService = {
     addBookmark: (req, res) => {
         const userId = req.params.id;
         const recipeId = req.params.recipeId;
+
+        if (typeof(userId) !== 'string' || typeof(recipeId) !== 'string' ) {
+            return res.status(400).send({ message: "Invalid ID!!" })
+        }
+
         const userDao = new UserDAO(database);
 
-        userDao.addBookmark(userId, recipeId);
+        const wasSuccesful = userDao.addBookmark(userId, recipeId);
 
-        res.send({ message: "Bookmark added successfully." });
+        if (wasSuccesful) {
+            return res.send({ message: "Bookmark added successfully." });
+        }
+
+        return res.status(500).send({ message: "Bookmark addition wasn't successful" });
     },
 
     removeBookmark: (req, res) => {
-        const userId = req.params.id;
-        const recipeId = req.params.recipeId;
+    const userId = req.params.id;
+    const recipeId = req.params.recipeId;
 
-        const userDao = new UserDAO(database);
+    if (typeof(userId) !== 'string' || typeof(recipeId) !== 'string') {
+        return res.status(400).send({ message: "Invalid ID!!" })
+    }
 
-        userDao.removeBookmark(userId, recipeId);
+    const userDao = new UserDAO(database);
+    const wasSuccessful = userDao.removeBookmark(userId, recipeId);
 
-        res.send({ message: "Bookmark removed successfully." });
-    },
+    if (wasSuccessful) {
+        return res.send({ message: "Bookmark removed successfully." });
+    }
+
+    return res.status(500).send({ message: "Bookmark removal wasn't successful" });
+},
+
 
     createUser: (req, res) => {
         const { name, email } = req.body
 
-        if (!name || !email) { // javascript falsy value
+        if (!name || !email) { 
             return res.status(400).send({ message: "Email or name isn't filled" });
         }
 
@@ -64,7 +90,7 @@ const UserService = {
         try {
             const userId = req.params.id;
 
-            if (!isNaN(userId) && Number.isInteger(parseFloat(userId)) && userId > 0) {
+            if (typeof(userId) !== 'string') {
                 return res.status(400).send({ message: "Invalid ID!!" })
             }
 
@@ -74,14 +100,20 @@ const UserService = {
     
             return res.status(200).send({message: "User deleted"})
         } catch(error) {
-
-            console.log("error")
             return res.status(400).send({message: "Invalid ID!!"})
         }
     },
 
     getAllBookmarkedRecipes: (req, res) => {
-        // by melo zavolat dao a vratit list receptů ulozrnych
+        const userId = req.params.id;
+
+        if (typeof(userId) !== 'string') {
+            return res.status(400).send({ message: "Invalid ID!!" })
+        }
+
+        const userDao = new UserDAO(database)
+
+        return res.status(200).send(userDao.getBookmarkedRecipes(userId))
     }
 };
 

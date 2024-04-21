@@ -2,9 +2,9 @@ class Recipe {
     constructor({id, title, ingredient, calories, cookingTime, imageURL, url}) {
         this.id = id;
         this.title = title;
-        this.ingredient = ingredient; // Array of ingredient names
+        this.ingredient = ingredient; 
         this.calories = calories;
-        this.cookingTime = cookingTime; // In minutes
+        this.cookingTime = cookingTime; // minutes
         this.imageURL = imageURL;
         this.url = url;
     }
@@ -19,20 +19,15 @@ class RecipeDAO {
         
         const ingredientsArray = typeof ingredient === 'string' ? ingredient.split(',').map(item => item.trim()) : ingredient;
 
-       
-        if (this.database.recipes.some(recipe => recipe.url === url)) {
-            console.log("Recipe with the same URL already exists.", url);
-            return null;  
+        if (!Array.isArray(ingredientsArray)) {
+            return
         }
 
         
-        const newId = (this.database.lastRecipeId = (this.database.lastRecipeId || 0) + 1);
-
-        
         const newRecipe = new Recipe({
-            id: newId,
+            id: this.database.newId(),
             title,
-            ingredient: ingredient.split(',').map(ing => ing.trim()), // ingredientsArray,
+            ingredient: ingredientsArray,
             calories,
             cookingTime,
             imageURL,
@@ -40,18 +35,17 @@ class RecipeDAO {
         });
 
        
-        this.database.recipes.push(newRecipe);
+        this.database.data.recipes.push(newRecipe);
 
         
         this.notifySubscribers();
 
-        // Return the newly created recipe
         return newRecipe;
     }
 
     
     getRecipe(id) {
-        return this.database.recipes.find(recipe => recipe.id === id);
+        return this.database.data.recipes.find(recipe => recipe.id === id);
     }
     
     
