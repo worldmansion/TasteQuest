@@ -72,6 +72,10 @@ class UserDAO {
         const recipes = user.bookmarkList.map(recipeId => recipeDao.getRecipe(recipeId));
         return recipes;
     }
+
+    getAllUsers = () => {
+        return this.database.data.users
+    }
     
     notifySubscribers() {
         this.database.notify();

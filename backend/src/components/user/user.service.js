@@ -22,6 +22,11 @@ const UserService = {
         res.send({ user: foundUser });
     },
 
+    getAllUsers: (req, res) => {
+        const userDao = new UserDAO(database);
+        res.send(userDao.getAllUsers())
+    },
+
     addBookmark: (req, res) => {
         const userId = req.params.id;
         const recipeId = req.params.recipeId;
