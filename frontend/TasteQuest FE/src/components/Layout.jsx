@@ -5,9 +5,22 @@ export const Layout = ({ children }) => {
   return (
     <>
       <CssBaseline />
-
-      <Box sx={{ width: '100%', p: 2 }}>
-        <Container maxWidth="sm">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          margin: '0 auto',
+        }}
+      >
+        <Container
+          component="main"
+          sx={{
+            flex: '1 0 auto',
+            width: '100%',
+            maxWidth: 'none',
+          }}
+        >
           <div
             style={{
               overflow: 'hidden',
@@ -20,7 +33,7 @@ export const Layout = ({ children }) => {
           >
             <img
               src={`data:image/png;base64,${logo}`}
-              alt="Description of image"
+              alt="Logo"
               style={{
                 width: '212px',
                 position: 'relative',
@@ -29,8 +42,18 @@ export const Layout = ({ children }) => {
               }}
             />
           </div>
+          {children}
         </Container>
-        {children}
+        <footer
+          style={{
+            textAlign: 'center',
+            padding: '10px 0',
+            backgroundColor: '#343a40',
+            width: '100%',
+          }}
+        >
+          © Katarína Marciová
+        </footer>
       </Box>
     </>
   )

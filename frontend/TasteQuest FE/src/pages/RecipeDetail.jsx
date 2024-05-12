@@ -25,7 +25,7 @@ export const RecipeDetail = () => {
       </IconButton>
       <Box>
         <Typography variant="h4">{recipeDetail.title}</Typography>
-        <Link href={recipeDetail.url}>Stránka receptu</Link>
+        <Link href={recipeDetail.url}>Recipe URL</Link>
       </Box>
       <iframe
         style={{
